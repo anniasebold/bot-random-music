@@ -1,1 +1,1 @@
-bot-twitter: python3 "bot-random-music.py"
+bot-twitter: python3 bot-random-music.py

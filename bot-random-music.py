@@ -1,7 +1,6 @@
 import random
 import tweepy
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
 from os import environ
 
 TWEEPY_API_KEY = environ['TWEEPY_API_KEY']
@@ -18,7 +17,7 @@ auth.set_access_token(
 api = tweepy.API(auth)
 
 sp = spotipy.Spotify(
-              auth_manager=SpotifyClientCredentials(
+              auth_manager=spotipy.oauth2.SpotifyClientCredentials(
               client_id=environ['SPOTIPY_CLIENT_ID'], 
               client_secret=environ['SPOTIPY_CLIENT_SECRET']))
 

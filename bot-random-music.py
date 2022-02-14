@@ -1,7 +1,5 @@
 import random
 import credentials
-import schedule
-import time
 import tweepy
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -49,12 +47,4 @@ def setTweetMessage():
       print(message)
       api.update_status(message)
 
-def setScheduleForTweet():
-  schedule.every().day.do(setTweetMessage)
-
-  while 1:
-    schedule.run_pending()
-    time.sleep(1)
-
 setTweetMessage()
-setScheduleForTweet()

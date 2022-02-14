@@ -1,0 +1,6 @@
+random
+credentials
+tweepy
+spotipy
+schedule
+time

@@ -1,6 +1,8 @@
 import random
 import tweepy
 import spotipy
+import schedule
+import time
 from os import environ
 
 TWEEPY_API_KEY = environ['TWEEPY_API_KEY']
@@ -53,4 +55,11 @@ def setTweetMessage():
       print(message)
       api.update_status(message)
 
-setTweetMessage()
+def scheduleTweetMessage():
+  schedule.every().hour.do(setTweetMessage)
+
+  while 1:
+    schedule.run_pending()
+    time.sleep(1)
+
+scheduleTweetMessage()

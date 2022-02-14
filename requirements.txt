@@ -1,3 +1,4 @@
 credentials
 tweepy
 spotipy
+spotipy.oauth2

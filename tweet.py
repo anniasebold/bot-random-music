@@ -47,6 +47,13 @@ def setTweetMessage():
       url = track['external_urls']['spotify']
       message = name + "\n" + url
       print(message)
-      # api.update_status(message)
+      api.update_status(message)
 
-setTweetMessage()
+def setScheduleForTweet():
+  schedule.every().day.do(setTweetMessage)
+
+  while 1:
+    schedule.run_pending()
+    time.sleep(1)
+
+setScheduleForTweet()

@@ -56,7 +56,7 @@ def setTweetMessage():
       api.update_status(message)
 
 def scheduleTweetMessage():
-  schedule.every().hour.do(setTweetMessage)
+  schedule.every().minute.do(setTweetMessage)
 
   while 1:
     schedule.run_pending()

@@ -7,6 +7,8 @@ TWEEPY_API_KEY = environ['TWEEPY_API_KEY']
 TWEEPY_API_SECRET_KEY = environ['TWEEPY_API_SECRET_KEY']
 TWEEPY_ACCESS_TOKEN = environ['TWEEPY_ACCESS_TOKEN']
 TWEEPY_ACCESS_TOKEN_SECRET = environ['TWEEPY_ACCESS_TOKEN_SECRET']
+SPOTIPY_CLIENT_ID = environ['SPOTIPY_CLIENT_ID']
+SPOTIPY_CLIENT_SECRET = environ['SPOTIPY_CLIENT_SECRET']
 
 auth = tweepy.OAuthHandler(
                       TWEEPY_API_KEY, 
@@ -18,8 +20,8 @@ api = tweepy.API(auth)
 
 sp = spotipy.Spotify(
               auth_manager=spotipy.oauth2.SpotifyClientCredentials(
-              client_id=environ['SPOTIPY_CLIENT_ID'], 
-              client_secret=environ['SPOTIPY_CLIENT_SECRET']))
+              client_id=SPOTIPY_CLIENT_ID, 
+              client_secret=SPOTIPY_CLIENT_SECRET))
 
 def getRandomSearch():
   characters = 'abcdefghijklmnopqrstuvwxyz'

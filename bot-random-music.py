@@ -1,21 +1,26 @@
 import random
-import credentials
 import tweepy
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from os import environ
+
+TWEEPY_API_KEY = environ['TWEEPY_API_KEY']
+TWEEPY_API_SECRET_KEY = environ['TWEEPY_API_SECRET_KEY']
+TWEEPY_ACCESS_TOKEN = environ['TWEEPY_ACCESS_TOKEN']
+TWEEPY_ACCESS_TOKEN_SECRET = environ['TWEEPY_ACCESS_TOKEN_SECRET']
 
 auth = tweepy.OAuthHandler(
-                      credentials.TWEEPY_API_KEY, 
-                      credentials.TWEEPY_API_SECRET_KEY)
+                      TWEEPY_API_KEY, 
+                      TWEEPY_API_SECRET_KEY)
 auth.set_access_token(
-                  credentials.TWEEPY_ACCESS_TOKEN,
-                  credentials.TWEEPY_ACCESS_TOKEN_SECRET)
+                  TWEEPY_ACCESS_TOKEN,
+                  TWEEPY_ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 sp = spotipy.Spotify(
               auth_manager=SpotifyClientCredentials(
-              client_id=credentials.SPOTIPY_CLIENT_ID, 
-              client_secret=credentials.SPOTIPY_CLIENT_SECRET))
+              client_id=environ['SPOTIPY_CLIENT_ID'], 
+              client_secret=environ['SPOTIPY_CLIENT_SECRET']))
 
 def getRandomSearch():
   characters = 'abcdefghijklmnopqrstuvwxyz'

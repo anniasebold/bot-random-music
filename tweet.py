@@ -56,4 +56,5 @@ def setScheduleForTweet():
     schedule.run_pending()
     time.sleep(1)
 
+setTweetMessage()
 setScheduleForTweet()

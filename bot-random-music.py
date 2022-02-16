@@ -36,7 +36,7 @@ def getRandomSearch():
   return randomSearch
 
 def getRandomNumber():
-  return random.randint(1, 15)
+  return random.randint(1, 9)
 
 def setTweetMessage():
   randomSearch = getRandomSearch()

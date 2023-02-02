@@ -61,6 +61,5 @@ def scheduleTweetMessage():
   while 1:
     schedule.run_pending()
     time.sleep(1)
-print('la')
 
 scheduleTweetMessage()
